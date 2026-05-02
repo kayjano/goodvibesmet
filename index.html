@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Good Vibrations Massage & Energy Therapies | Willards, MD</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style (4).css" />
+</head>
+
+<body>
+
+  <!-- Custom cursor: small dot + lagging ring, driven by JavaScript below -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-ring" id="cursorRing"></div>
+
+
+  <!-- ============================================================
+       NAVIGATION
+       Starts transparent. JavaScript adds "scrolled" class after
+       the user scrolls 60px, which reveals the frosted background.
+       ============================================================ -->
+  <nav id="nav">
+    <a href="#hero" class="nav-logo">Good Vibrations</a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#expect">What to Expect</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <!-- ============================================================
+       HERO
+       Split layout: photo placeholder on the left, text on the right.
+       ============================================================ -->
+  <section id="hero">
+
+    <div class="hero-image-side">
+      <!-- RIPPLE CANVAS
+           This draws an interactive water ripple effect.
+           Move your cursor over this area to create ripples.
+           The canvas is sized and animated by JavaScript below. -->
+      <canvas id="rippleCanvas"></canvas>
+    </div>
+
+    <div class="hero-content-side">
+      <p class="hero-eyebrow">Willards, Maryland</p>
+      <h1 class="hero-title">Good Vibrations<br /><em>Massage &amp; Energy Therapies</em></h1>
+      <p class="hero-tagline">Over 20 years of healing touch — body, energy, and spirit.</p>
+      <a href="tel:4435692029" class="btn-primary">Call to Schedule</a>
+      <p class="hero-phone">443-569-2029</p>
+    </div>
+
+  </section>
+
+
+  <!-- ============================================================
+       SERVICES
+       ============================================================ -->
+  <section id="services">
+    <div class="container">
+
+      <div class="section-header">
+        <span class="section-label">What Christine Offers</span>
+        <h2 class="section-title">Services</h2>
+      </div>
+
+      <h3 class="service-group-title">Massage &amp; Bodywork</h3>
+      <div class="service-grid">
+
+        <div class="service-card fade-up">
+          <span class="service-num">01</span>
+          <h3 class="service-name">Therapeutic Massage</h3>
+          <p class="service-desc">Full-body or focused therapeutic massage tailored to your needs and comfort level.</p>
+          <div class="service-meta">
+            <span class="service-duration">30 / 60 / 90 min</span>
+            <span class="service-price">$55 / $100 / $140</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up delay-1">
+          <span class="service-num">02</span>
+          <h3 class="service-name">Hot Stone Massage</h3>
+          <p class="service-desc">Smooth heated stones melt tension and warm the body from within — deeply grounding and restorative.</p>
+          <div class="service-meta">
+            <span class="service-duration">60 min</span>
+            <span class="service-price">$140</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up delay-2">
+          <span class="service-num">03</span>
+          <h3 class="service-name">Cupping with Massage</h3>
+          <p class="service-desc">Therapeutic cupping combined with massage for deep release. Effective for chronic tension in the back, neck, shoulders, legs, arms, and face.</p>
+          <div class="service-meta">
+            <span class="service-duration">60 min</span>
+            <span class="service-price">$140</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up delay-1">
+          <span class="service-num">04</span>
+          <h3 class="service-name">Foot Reflexology</h3>
+          <p class="service-desc">Targeted pressure on reflex points in the feet that correspond to the whole body — balancing and restorative.</p>
+          <div class="service-meta">
+            <span class="service-duration">30 / 60 min</span>
+            <span class="service-price">$65 / $120</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up delay-2">
+          <span class="service-num">05</span>
+          <h3 class="service-name">A Shared Experience</h3>
+          <p class="service-desc">Bring a friend. Learn simple techniques to practice on each other — a warm, practical session for two.</p>
+          <div class="service-meta">
+            <span class="service-duration">90 min</span>
+            <span class="service-price">$140</span>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="service-group-title">Energy Work</h3>
+      <div class="service-grid">
+
+        <div class="service-card fade-up">
+          <span class="service-num">01</span>
+          <h3 class="service-name">Reiki Session</h3>
+          <p class="service-desc">Gentle energy healing that supports the body's natural capacity to restore balance — working on the nervous system, emotional body, and energy field. Fully clothed.</p>
+          <div class="service-meta">
+            <span class="service-duration">30 min</span>
+            <span class="service-price">Call for pricing</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up delay-1">
+          <span class="service-num">02</span>
+          <h3 class="service-name">Sound Bath</h3>
+          <p class="service-desc">Healing sound frequencies from singing bowls that quiet the mind and reset the nervous system. Most people reach a deeply meditative state within minutes.</p>
+          <div class="service-meta">
+            <span class="service-duration">30 min</span>
+            <span class="service-price">Call for pricing</span>
+          </div>
+        </div>
+
+        <div class="service-card fade-up delay-2">
+          <span class="service-num">03</span>
+          <h3 class="service-name">Shamanic Session</h3>
+          <p class="service-desc">A guided, interactive healing experience for those ready to explore what's held in the body and energy field at a deeper level.</p>
+          <div class="service-meta">
+            <span class="service-duration">By arrangement</span>
+            <span class="service-price">Call for pricing</span>
+          </div>
+        </div>
+
+        <div class="service-card service-card--cta fade-up delay-3">
+          <span class="service-num">—</span>
+          <h3 class="service-name">Not sure where to start?</h3>
+          <p class="service-desc">Reach out and Christine will help you figure out what makes sense. There's no wrong place to begin.</p>
+          <a href="#contact" class="btn-ghost">Get in touch</a>
+        </div>
+
+      </div>
+
+      <h3 class="service-group-title">Add-Ons</h3>
+      <div class="addons-grid">
+        <div class="addon-item fade-up">
+          <span class="addon-name">Hot Stone</span>
+          <span class="addon-detail">Stones placed on the back during massage &nbsp;·&nbsp; +$10 &nbsp;·&nbsp; 15 min</span>
+        </div>
+        <div class="addon-item fade-up delay-1">
+          <span class="addon-name">Cupping</span>
+          <span class="addon-detail">Extra cupping time for a specific area &nbsp;·&nbsp; +$35 &nbsp;·&nbsp; 15 min</span>
+        </div>
+        <div class="addon-item fade-up delay-2">
+          <span class="addon-name">Aromatherapy</span>
+          <span class="addon-detail">Customized scent or blend to enhance your session &nbsp;·&nbsp; +$10</span>
+        </div>
+        <div class="addon-item fade-up delay-1">
+          <span class="addon-name">Foot Reflexology</span>
+          <span class="addon-detail">15 extra minutes of focused foot work &nbsp;·&nbsp; +$30</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       ABOUT
+       ============================================================ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-image-col fade-up">
+          <div class="about-frame">
+            <img src="headshot_Christine.jpg" alt="Christine Webb, Licensed Massage Therapist" class="about-photo" />
+            <div class="about-stat-strip">
+              <div class="stat">
+                <span class="stat-num">20+</span>
+                <span class="stat-label">Years of practice</span>
+              </div>
+              <div class="stat">
+                <span class="stat-num">6</span>
+                <span class="stat-label">Certifications</span>
+              </div>
+            </div>
+          </div>
+          <div class="about-frame-outline"></div>
+        </div>
+
+        <div class="about-text fade-up delay-2">
+          <span class="section-label">Meet Christine</span>
+          <h2 class="section-title">A practitioner who<br /><em>listens</em> first.</h2>
+
+          <blockquote class="about-quote">
+            "Every person who walks through my door is carrying something. My job is to help them set it down."
+          </blockquote>
+
+          <p>Christine Webb has been practicing therapeutic massage and energy work for over 20 years — in luxury waterfront hotels, small bespoke studios, and now in her own private practice in Willards, Maryland.</p>
+          <p>She has a particular specialty in women's therapeutic massage and energy healing, with deep experience in how stress, hormonal shifts, and emotional holding patterns show up in the body. Her practice is open to anyone drawn to this kind of integrated, whole-person approach.</p>
+          <p>Christine works independently. You'll always see her — not a rotation of staff, not a different face each visit.</p>
+
+          <div class="credentials">
+            <p class="credentials-label">Education &amp; Certifications</p>
+            <ul>
+              <li>Licensed Massage Therapist, Baltimore School of Massage (2005)</li>
+              <li>Certified Aromatherapist, Institute of Integrative Aromatherapy (2007)</li>
+              <li>Reiki Master Teacher, Usui System of Natural Healing (2010)</li>
+              <li>The Four Winds Light Body School — Luminous Healing &amp; Energy Medicine (2010)</li>
+              <li>Reconnective Healing (2011)</li>
+              <li>Vibrational Sound Therapy Certified Practitioner, VSA (2020)</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       WHAT TO EXPECT — dark background section
+       Left: FAQ   |   Right: Session flow steps
+       ============================================================ -->
+  <section id="expect" class="section-dark">
+    <div class="container">
+      <div class="expect-grid">
+
+        <div class="fade-up">
+          <span class="section-label teal-label">Common Questions</span>
+          <h2 class="section-title light-title">Good things to <em>know.</em></h2>
+
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <p class="faq-q">Is this practice only for women?</p>
+              <p class="faq-a">Christine has a deep specialty in women's therapeutic massage and energy healing — including experience with how stress, hormonal shifts, and emotional patterns show up in the body. That said, her practice warmly welcomes anyone. If you're wondering whether it's a good fit, just give her a call.</p>
+            </div>
+
+            <div class="faq-item">
+              <p class="faq-q">I've never tried energy work. Where do I begin?</p>
+              <p class="faq-a">You don't need any prior experience — or even a clear sense of what you're looking for. Christine will talk with you about what's going on and help you find the right starting place. Many people begin with a massage and discover that energy work is a natural next step.</p>
+            </div>
+
+            <div class="faq-item">
+              <p class="faq-q">Can I combine services in one visit?</p>
+              <p class="faq-a">Absolutely. Many clients pair a massage with Reiki or a sound bath in a single session — it's a beautiful combination. Just mention what you're curious about when you reach out, and Christine can help you plan something that makes sense.</p>
+            </div>
+
+            <div class="faq-item">
+              <p class="faq-q">What should I wear?</p>
+              <p class="faq-a">Whatever is comfortable for you. For massage, you'll be warmly and appropriately draped throughout your session — you'll never feel exposed. For Reiki, sound bath, and shamanic work, you remain fully clothed the entire time.</p>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="fade-up delay-2">
+          <span class="section-label teal-label">Your Visit</span>
+          <h2 class="section-title light-title">How a session <em>unfolds.</em></h2>
+
+          <div class="steps">
+
+            <div class="step">
+              <span class="step-num">01</span>
+              <div class="step-body">
+                <strong>Arrive &amp; settle in</strong>
+                <span>Come as you are — there's no need to prepare anything. You'll have a few quiet minutes to arrive, breathe, and leave the outside world at the door before anything begins.</span>
+              </div>
+            </div>
+
+            <div class="step">
+              <span class="step-num">02</span>
+              <div class="step-body">
+                <strong>A brief conversation</strong>
+                <span>Christine will check in with you — how your body is feeling, what's been weighing on you, what you're hoping to walk away with. You can share as much or as little as you'd like. She listens carefully and shapes everything from there.</span>
+              </div>
+            </div>
+
+            <div class="step">
+              <span class="step-num">03</span>
+              <div class="step-body">
+                <strong>Your session</strong>
+                <span>Every session is different because every person is different. Christine works intuitively, checking in as she goes, adjusting pressure and technique in real time. You are the guide — she follows your lead.</span>
+              </div>
+            </div>
+
+            <div class="step">
+              <span class="step-num">04</span>
+              <div class="step-body">
+                <strong>Take your time leaving</strong>
+                <span>There's no rush. After your session, you'll have space to rest, reorient, and ease back into yourself. Christine may offer a few suggestions for how to support the work in the days that follow.</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CONTACT
+       ============================================================ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="fade-up">
+          <span class="section-label">Get in Touch</span>
+          <h2 class="section-title contact-title">Ready to feel<br /><em>better?</em></h2>
+          <p class="contact-subtitle">Reach out by phone or email to schedule. Christine responds personally — no automated system, no booking portal. Just a real conversation about what you need.</p>
+        </div>
+
+        <div class="contact-details fade-up delay-2">
+          <div class="contact-row">
+            <span class="contact-label">Phone</span>
+            <a href="tel:4435692029" class="contact-val">443 · 569 · 2029</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Email</span>
+            <a href="mailto:mcwebb40@yahoo.com" class="contact-val">mcwebb40@yahoo.com</a>
+          </div>
+          <div class="contact-row">
+            <span class="contact-label">Location</span>
+            <span class="contact-val">Willards, Maryland</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer>
+    <span class="footer-logo">Good Vibrations Massage &amp; Energy Therapies</span>
+    <span class="footer-copy">&copy; 2025 &nbsp;·&nbsp; Willards, Maryland</span>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+
+    // ============================================================
+    // 1. CUSTOM CURSOR
+    // ============================================================
+    var cursor = document.getElementById('cursor');
+    var ring   = document.getElementById('cursorRing');
+    var mx = 0, my = 0, rx = 0, ry = 0;
+
+    document.addEventListener('mousemove', function(e) {
+      mx = e.clientX;
+      my = e.clientY;
+    });
+
+    function animateCursor() {
+      cursor.style.left = mx + 'px';
+      cursor.style.top  = my + 'px';
+      rx += (mx - rx) * 0.12;
+      ry += (my - ry) * 0.12;
+      ring.style.left = rx + 'px';
+      ring.style.top  = ry + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+
+    // ============================================================
+    // 2. NAV — frosted background after scrolling 60px
+    // ============================================================
+    var nav = document.getElementById('nav');
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 60) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+    });
+
+    // ============================================================
+    // 3. SCROLL FADE-UP ANIMATION
+    // ============================================================
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-up').forEach(function(el) {
+      observer.observe(el);
+    });
+
+    // ============================================================
+    // 4. WATER RIPPLE EFFECT
+    //
+    // How it works:
+    // - A <canvas> fills the hero image side
+    // - We maintain two grids of numbers (current, previous) that
+    //   simulate water wave physics — each cell is a "height"
+    // - Moving the mouse drops a "stone" that disturbs the grid
+    // - Each animation frame: new height = average of neighbours
+    //   minus the old height, then dampened slightly
+    //   This is a classic 2D wave equation on a grid.
+    // - Heights are mapped to colors in the teal palette
+    // ============================================================
+    (function() {
+      var canvas = document.getElementById('rippleCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+
+      // Resolution of the simulation grid — lower = faster, higher = sharper
+      // We run the sim at a reduced size and scale up for performance
+      var SCALE = 3;
+      var cols, rows;
+      var current, previous; // the two wave grids
+
+      // Palette: teal/sage gradient colors to map wave heights to
+      // These are RGB triplets blended based on wave height
+      var COLOR_DEEP  = [100, 155, 152];  // soft teal (troughs) — light base
+      var COLOR_MID   = [140, 190, 187];  // pale teal (neutral)
+      var COLOR_LIGHT = [220, 240, 238];  // near-white (crests) — the sparkle
+
+      function init() {
+        canvas.width  = canvas.offsetWidth;
+        canvas.height = canvas.offsetHeight;
+        cols = Math.floor(canvas.width  / SCALE);
+        rows = Math.floor(canvas.height / SCALE);
+        // Flat typed arrays for speed
+        current  = new Float32Array(cols * rows);
+        previous = new Float32Array(cols * rows);
+      }
+
+      // Drop a ripple at grid position (gx, gy) with given strength
+      function disturb(gx, gy, strength) {
+        var radius = 2; // smaller splash radius
+        for (var dy = -radius; dy <= radius; dy++) {
+          for (var dx = -radius; dx <= radius; dx++) {
+            if (dx*dx + dy*dy <= radius*radius) {
+              var nx = gx + dx;
+              var ny = gy + dy;
+              if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
+                current[ny * cols + nx] += strength;
+              }
+            }
+          }
+        }
+      }
+
+      // Mouse tracking — only disturb when cursor moves a meaningful distance
+      var heroSide = canvas.parentElement;
+      var lastGx = -99, lastGy = -99;
+      heroSide.addEventListener('mousemove', function(e) {
+        var rect = canvas.getBoundingClientRect();
+        var gx = Math.floor((e.clientX - rect.left)  / SCALE);
+        var gy = Math.floor((e.clientY - rect.top)   / SCALE);
+        // Only drop a ripple if cursor moved at least 10 grid cells
+        if (Math.abs(gx - lastGx) > 4 || Math.abs(gy - lastGy) > 4) {
+          disturb(gx, gy, 180);
+          lastGx = gx;
+          lastGy = gy;
+        }
+      });
+
+      // Occasional gentle drip so canvas is never fully still
+      setInterval(function() {
+        var gx = Math.floor(Math.random() * cols);
+        var gy = Math.floor(Math.random() * rows);
+        disturb(gx, gy, 80); // was 80 — very soft ambient drip
+      }, 3500); // was 1800 — less frequent
+
+      var imageData, pixels;
+
+      function step() {
+        // Resize if the element changed size (e.g. window resize)
+        if (canvas.offsetWidth !== canvas.width || canvas.offsetHeight !== canvas.height) {
+          init();
+        }
+
+        // Wave propagation — 2D wave equation on the grid
+        // new[i] = (sum of 4 neighbours / 2) - old[i], then dampen
+        var damping = 0.985; // was 0.985 — waves die out much sooner
+        for (var y = 1; y < rows - 1; y++) {
+          for (var x = 1; x < cols - 1; x++) {
+            var i = y * cols + x;
+            var val = (
+              current[i - 1] +
+              current[i + 1] +
+              current[i - cols] +
+              current[i + cols]
+            ) / 2 - previous[i];
+            previous[i] = val * damping;
+          }
+        }
+
+        // Swap buffers
+        var tmp = previous;
+        previous = current;
+        current = tmp;
+
+        // Draw: map each grid cell to a pixel color
+        imageData = ctx.createImageData(canvas.width, canvas.height);
+        pixels = imageData.data;
+
+        for (var gy2 = 0; gy2 < rows; gy2++) {
+          for (var gx2 = 0; gx2 < cols; gx2++) {
+            var h = current[gy2 * cols + gx2];
+            // Normalise height to 0–1 range
+            var t = Math.max(0, Math.min(1, (h + 100) / 200));
+
+            // Blend between deep teal and light teal based on height
+            var r, g, b;
+            if (t < 0.5) {
+              var f = t * 2;
+              r = COLOR_DEEP[0] + (COLOR_MID[0] - COLOR_DEEP[0]) * f;
+              g = COLOR_DEEP[1] + (COLOR_MID[1] - COLOR_DEEP[1]) * f;
+              b = COLOR_DEEP[2] + (COLOR_MID[2] - COLOR_DEEP[2]) * f;
+            } else {
+              var f2 = (t - 0.5) * 2;
+              r = COLOR_MID[0] + (COLOR_LIGHT[0] - COLOR_MID[0]) * f2;
+              g = COLOR_MID[1] + (COLOR_LIGHT[1] - COLOR_MID[1]) * f2;
+              b = COLOR_MID[2] + (COLOR_LIGHT[2] - COLOR_MID[2]) * f2;
+            }
+
+            // Paint each grid cell as SCALE×SCALE block of pixels
+            for (var py = 0; py < SCALE; py++) {
+              for (var px = 0; px < SCALE; px++) {
+                var pixelX = gx2 * SCALE + px;
+                var pixelY = gy2 * SCALE + py;
+                if (pixelX < canvas.width && pixelY < canvas.height) {
+                  var idx = (pixelY * canvas.width + pixelX) * 4;
+                  pixels[idx]     = r;
+                  pixels[idx + 1] = g;
+                  pixels[idx + 2] = b;
+                  pixels[idx + 3] = 255;
+                }
+              }
+            }
+          }
+        }
+
+        ctx.putImageData(imageData, 0, 0);
+        requestAnimationFrame(step);
+      }
+
+      init();
+      step();
+
+    })();
+
+  </script>
