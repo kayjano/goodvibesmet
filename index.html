@@ -223,7 +223,7 @@
 
           <p>Christine Webb has been practicing therapeutic massage and energy work for over 20 years — in luxury waterfront hotels, intimate studios, and now in her own private practice in Willards, Maryland.</p>
           <p>She has a particular specialty in women's therapeutic massage and energy healing, with deep experience in how stress, hormonal shifts, and emotional holding patterns show up in the body. Her practice is open to anyone drawn to this kind of integrated, whole-person approach.</p>
-          <p>Christine works independently. You'll always see her — not a rotation of staff, not a different face each visit.</p>
+          <p>You'll always see her, not a rotation of staff or a different face each visit.</p>
 
           <div class="credentials">
             <p class="credentials-label">Education &amp; Certifications</p>
@@ -295,37 +295,13 @@
 
   <!-- ============================================================
        WHAT TO EXPECT — dark background section
-       Left: FAQ   |   Right: Session flow steps
+       Left: Session flow steps   |   Right: FAQ accordion
        ============================================================ -->
   <section id="expect" class="section-dark">
     <div class="container">
       <div class="expect-grid">
 
         <div class="fade-up">
-          <span class="section-label teal-label">Common Questions</span>
-          <h2 class="section-title light-title">Good things to <em>know.</em></h2>
-
-          <div class="faq-list">
-
-            <div class="faq-item">
-              <p class="faq-q">Is this practice only for women?</p>
-              <p class="faq-a">Christine has a deep specialty in women's health and healing — but her practice is open to anyone. If you're wondering whether it's a good fit, just call.</p>
-            </div>
-
-            <div class="faq-item">
-              <p class="faq-q">I've never tried energy work. Where do I begin?</p>
-              <p class="faq-a">You don't need any prior experience — or even a clear sense of what you're looking for. Christine will talk with you about what's going on and help you find the right starting place. Many people begin with a massage and discover that energy work is a natural next step.</p>
-            </div>
-
-            <div class="faq-item">
-              <p class="faq-q">What should I wear?</p>
-              <p class="faq-a">Whatever is comfortable for you. For massage, you'll be warmly and appropriately draped throughout your session — you'll never feel exposed. For Reiki, sound bath, and shamanic work, you remain fully clothed the entire time.</p>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="fade-up delay-2">
           <span class="section-label teal-label">Your Visit</span>
           <h2 class="section-title light-title">How a session <em>unfolds.</em></h2>
 
@@ -361,6 +337,36 @@
                 <strong>Take your time leaving</strong>
                 <span>There's no rush. After your session, you'll have space to rest, reorient, and ease back into yourself. Christine may offer a few suggestions for how to support the work in the days that follow.</span>
               </div>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="fade-up delay-2 faq-panel">
+          <span class="section-label teal-label">Common Questions</span>
+          <h2 class="section-title light-title">Good things to <em>know.</em></h2>
+
+          <div class="faq-list">
+
+            <div class="faq-item open">
+              <button class="faq-q">Is this practice only for women?<span class="faq-chevron"></span></button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p class="faq-a">Christine has a deep specialty in women's health and healing — but her practice is open to anyone. If you're wondering whether it's a good fit, just call.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">I've never tried energy work. Where do I begin?<span class="faq-chevron"></span></button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p class="faq-a">You don't need any prior experience — or even a clear sense of what you're looking for. Christine will talk with you about what's going on and help you find the right starting place. Many people begin with a massage and discover that energy work is a natural next step.</p>
+              </div></div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-q">What should I wear?<span class="faq-chevron"></span></button>
+              <div class="faq-body"><div class="faq-body-inner">
+                <p class="faq-a">Whatever is comfortable for you. For massage, you'll be warmly and appropriately draped throughout your session — you'll never feel exposed. For Reiki, sound therapy, and shamanic work, you remain fully clothed the entire time.</p>
+              </div></div>
             </div>
 
           </div>
@@ -472,7 +478,21 @@
     });
 
     // ============================================================
-    // 4. TESTIMONIAL CAROUSEL
+    // 4. FAQ ACCORDION
+    // ============================================================
+    (function() {
+      var items = document.querySelectorAll('.faq-item');
+      items.forEach(function(item) {
+        item.querySelector('.faq-q').addEventListener('click', function() {
+          var isOpen = item.classList.contains('open');
+          items.forEach(function(i) { i.classList.remove('open'); });
+          if (!isOpen) item.classList.add('open');
+        });
+      });
+    })();
+
+    // ============================================================
+    // 5. TESTIMONIAL CAROUSEL
     // ============================================================
     (function() {
       var slides = document.querySelectorAll('.testimonial-slide');

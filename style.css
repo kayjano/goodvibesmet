@@ -25,7 +25,7 @@
 :root {
   --color-bg:        #f5f2ee;
   --color-bg-alt:    #edeae4;
-  --color-dark:      #1e2422;
+  --color-dark:      #2d3c38;
   --color-teal:      #3d7a78;
   --color-teal-dark: #2e5e5c;
   --teal-light:      #7eb5b3;
@@ -65,8 +65,8 @@ html {
 body {
   font-family: var(--font-body);
   font-weight: 400;
-  font-size: 1.05rem;
-  line-height: 1.8;
+  font-size: 1.08rem;
+  line-height: 1.85;
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
@@ -262,7 +262,7 @@ nav.scrolled {
 .hero-title {
   font-family: var(--font-heading);
   font-size: clamp(2.2rem, 4.5vw, 3.6rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.15;
   color: var(--color-text);
   margin-bottom: 1.5rem;
@@ -270,8 +270,8 @@ nav.scrolled {
 
 .hero-tagline {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
-  font-weight: 300;
+  font-size: 1.2rem;
+  font-weight: 400;
   font-style: italic;
   color: var(--color-text-light);
   margin-bottom: 2.5rem;
@@ -288,19 +288,23 @@ nav.scrolled {
 }
 
 .section-header {
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
+}
+
+.section-header + .service-group-title {
+  margin-top: var(--space-sm);
 }
 
 .service-group-title {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.7rem;
   font-weight: 400;
-  letter-spacing: 0.08em;
-  color: var(--color-stone);
+  letter-spacing: 0.04em;
+  color: var(--color-text);
   margin-top: var(--space-lg);
   margin-bottom: var(--space-md);
   padding-bottom: var(--space-xs);
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-teal);
 }
 
 .service-grid {
@@ -371,8 +375,8 @@ nav.scrolled {
 
 .service-num {
   font-family: var(--font-heading);
-  font-size: 0.8rem;
-  letter-spacing: 0.12em;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
   color: var(--color-teal);
   margin-bottom: 0.2rem;
 }
@@ -385,7 +389,7 @@ nav.scrolled {
 }
 
 .service-desc {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: var(--color-text-light);
   flex: 1;
   margin-bottom: 0;
@@ -402,7 +406,7 @@ nav.scrolled {
 }
 
 .service-duration {
-  font-size: 0.78rem;
+  font-size: 0.83rem;
   color: var(--color-stone);
   letter-spacing: 0.04em;
 }
@@ -436,7 +440,7 @@ nav.scrolled {
 }
 
 .addon-detail {
-  font-size: 0.88rem;
+  font-size: 0.93rem;
   color: var(--color-text-light);
 }
 
@@ -468,7 +472,7 @@ nav.scrolled {
   margin-top: 0.75rem;
   font-family: var(--font-heading);
   font-size: 1.05rem;
-  font-weight: 300;
+  font-weight: 400;
   font-style: italic;
   letter-spacing: 0.04em;
   color: var(--color-text-light);
@@ -538,7 +542,7 @@ nav.scrolled {
 }
 
 .stat-label {
-  font-size: 0.68rem;
+  font-size: 0.74rem;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: rgba(245, 242, 238, 0.65);
@@ -550,9 +554,9 @@ nav.scrolled {
 
 .about-quote {
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.55;
   color: var(--color-text);
   border-left: 3px solid var(--color-teal);
@@ -582,7 +586,7 @@ nav.scrolled {
 }
 
 .credentials li {
-  font-size: 0.9rem;
+  font-size: 0.96rem;
   color: var(--color-text-light);
   padding-left: 1.2em;
   position: relative;
@@ -593,6 +597,9 @@ nav.scrolled {
   position: absolute;
   left: 0;
   color: var(--color-teal);
+  font-size: 1.5rem;
+  line-height: 1;
+  top: 0.1rem;
 }
 
 
@@ -601,8 +608,8 @@ nav.scrolled {
    ================================================================ */
 
 #testimonials {
-  padding: var(--space-xl) var(--space-md);
-  background: var(--color-bg-alt);
+  padding: var(--space-lg) var(--space-md);
+  background: #e8e1d4;
 }
 
 .testimonial-carousel {
@@ -632,16 +639,16 @@ nav.scrolled {
 
 .testimonial-quote {
   font-family: var(--font-heading);
-  font-size: 1.3rem;
+  font-size: 1.55rem;
   font-style: italic;
-  font-weight: 300;
+  font-weight: 500;
   line-height: 1.65;
   color: var(--color-text);
   margin-bottom: 0;
 }
 
 .testimonial-name {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 400;
   letter-spacing: 0.12em;
   color: var(--color-stone);
@@ -688,36 +695,117 @@ nav.scrolled {
 
 .faq-list {
   margin-top: var(--space-md);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-md);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .faq-item {
-  padding-bottom: var(--space-md);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .faq-q {
   font-family: var(--font-heading);
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--color-bg);
-  margin-bottom: 0.5rem;
+  background: none;
+  border: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.2rem 0;
+  transition: color 0.2s ease;
+}
+
+.faq-q:hover {
+  color: var(--teal-light);
+}
+
+.faq-chevron {
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--teal-light);
+  border-bottom: 1.5px solid var(--teal-light);
+  transform: rotate(45deg);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  flex-shrink: 0;
+  margin-bottom: 3px;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(-135deg);
+  margin-bottom: -3px;
+}
+
+.faq-body {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.faq-item.open .faq-body {
+  grid-template-rows: 1fr;
+}
+
+.faq-body-inner {
+  overflow: hidden;
 }
 
 .faq-a {
-  font-size: 0.95rem;
-  color: rgba(245, 242, 238, 0.72);
+  font-size: 1rem;
+  color: rgba(245, 242, 238, 0.88);
   line-height: 1.75;
+  padding-bottom: 1.2rem;
   margin-bottom: 0;
+}
+
+.faq-panel {
+  background: var(--color-bg);
+  border-radius: 3px;
+  padding: var(--space-md);
+}
+
+.faq-panel .section-label {
+  color: var(--color-teal);
+}
+
+.faq-panel .section-title {
+  color: var(--color-text);
+}
+
+.faq-panel .faq-list {
+  border-top-color: var(--color-border);
+}
+
+.faq-panel .faq-item {
+  border-bottom-color: var(--color-border);
+}
+
+.faq-panel .faq-q {
+  color: var(--color-text);
+}
+
+.faq-panel .faq-q:hover {
+  color: var(--color-teal);
+}
+
+.faq-panel .faq-chevron {
+  border-right-color: var(--color-teal);
+  border-bottom-color: var(--color-teal);
+}
+
+.faq-panel .faq-a {
+  color: var(--color-text-light);
 }
 
 .steps {
   margin-top: var(--space-md);
   display: flex;
   flex-direction: column;
-  gap: var(--space-md);
+  gap: 0;
 }
 
 .step {
@@ -728,10 +816,10 @@ nav.scrolled {
 
 .step-num {
   font-family: var(--font-heading);
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
+  font-size: 1.1rem;
+  letter-spacing: 0.1em;
   color: var(--teal-light);
-  padding-top: 0.25rem;
+  padding-top: 0.1rem;
   flex-shrink: 0;
 }
 
@@ -739,21 +827,22 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-  padding-bottom: var(--space-md);
+  padding-bottom: var(--space-sm);
+  padding-top: var(--space-sm);
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
   flex: 1;
 }
 
 .step-body strong {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 500;
   color: var(--color-bg);
 }
 
 .step-body span {
-  font-size: 0.95rem;
-  color: rgba(245, 242, 238, 0.72);
+  font-size: 1rem;
+  color: rgba(245, 242, 238, 0.88);
   line-height: 1.75;
 }
 
@@ -764,7 +853,7 @@ nav.scrolled {
 
 #contact {
   padding: var(--space-xl) var(--space-md);
-  background: var(--color-bg);
+  background: var(--color-bg-alt);
 }
 
 .contact-grid {
@@ -812,7 +901,7 @@ nav.scrolled {
 .contact-val {
   font-family: var(--font-heading);
   font-size: 1.5rem;
-  font-weight: 300;
+  font-weight: 400;
   color: var(--color-text);
 }
 
@@ -886,7 +975,7 @@ footer {
 .section-title {
   font-family: var(--font-heading);
   font-size: clamp(1.9rem, 4vw, 2.9rem);
-  font-weight: 300;
+  font-weight: 400;
   line-height: 1.18;
   color: var(--color-text);
   margin-bottom: var(--space-md);
