@@ -12,11 +12,6 @@
 
 <body>
 
-  <!-- Custom cursor: small dot + lagging ring, driven by JavaScript below -->
-  <div class="cursor" id="cursor"></div>
-  <div class="cursor-ring" id="cursorRing"></div>
-
-
   <!-- ============================================================
        NAVIGATION
        Starts transparent. JavaScript adds "scrolled" class after
@@ -40,6 +35,7 @@
   <section id="hero">
 
     <div class="hero-image-side">
+      <img id="logoUnderwater" src="Good_Vibes_MET_logo_transparent.png" alt="Good Vibrations logo" />
       <!-- RIPPLE CANVAS
            This draws an interactive water ripple effect.
            Move your cursor over this area to create ripples.
@@ -131,7 +127,7 @@
         </div>
         <div class="addon-item fade-up delay-1">
           <span class="addon-name">Foot Reflexology</span>
-          <span class="addon-detail">15 extra minutes of focused foot work &nbsp;·&nbsp; +$30</span>
+          <span class="addon-detail">Extra focused foot work &nbsp;·&nbsp; +$30 &nbsp;·&nbsp; 15 min</span>
         </div>
       </div>
 
@@ -370,6 +366,7 @@
             </div>
 
           </div>
+          <img src="Salt Lamp.jpg" alt="Salt lamp in Christine's treatment room" class="faq-panel-img" />
         </div>
 
       </div>
@@ -427,30 +424,7 @@
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 
     // ============================================================
-    // 1. CUSTOM CURSOR
-    // ============================================================
-    var cursor = document.getElementById('cursor');
-    var ring   = document.getElementById('cursorRing');
-    var mx = 0, my = 0, rx = 0, ry = 0;
-
-    document.addEventListener('mousemove', function(e) {
-      mx = e.clientX;
-      my = e.clientY;
-    });
-
-    function animateCursor() {
-      cursor.style.left = mx + 'px';
-      cursor.style.top  = my + 'px';
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = rx + 'px';
-      ring.style.top  = ry + 'px';
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // ============================================================
-    // 2. NAV — frosted background after scrolling 60px
+    // 1. NAV — frosted background after scrolling 60px
     // ============================================================
     var nav = document.getElementById('nav');
     window.addEventListener('scroll', function() {
@@ -542,9 +516,10 @@
 
       // Resolution of the simulation grid — lower = faster, higher = sharper
       // We run the sim at a reduced size and scale up for performance
-      var SCALE = 3;
+      var SCALE = 6;
       var cols, rows;
       var current, previous; // the two wave grids
+      var logoImg = document.getElementById('logoUnderwater');
 
       // Palette: teal/sage gradient colors to map wave heights to
       // These are RGB triplets blended based on wave height
@@ -557,7 +532,6 @@
         canvas.height = canvas.offsetHeight;
         cols = Math.floor(canvas.width  / SCALE);
         rows = Math.floor(canvas.height / SCALE);
-        // Flat typed arrays for speed
         current  = new Float32Array(cols * rows);
         previous = new Float32Array(cols * rows);
       }
@@ -586,8 +560,8 @@
         var gx = Math.floor((e.clientX - rect.left)  / SCALE);
         var gy = Math.floor((e.clientY - rect.top)   / SCALE);
         // Only drop a ripple if cursor moved at least 10 grid cells
-        if (Math.abs(gx - lastGx) > 4 || Math.abs(gy - lastGy) > 4) {
-          disturb(gx, gy, 180);
+        if (Math.abs(gx - lastGx) > 8 || Math.abs(gy - lastGy) > 8) {
+          disturb(gx, gy, 60);
           lastGx = gx;
           lastGy = gy;
         }
@@ -597,8 +571,8 @@
       setInterval(function() {
         var gx = Math.floor(Math.random() * cols);
         var gy = Math.floor(Math.random() * rows);
-        disturb(gx, gy, 80); // was 80 — very soft ambient drip
-      }, 3500); // was 1800 — less frequent
+        disturb(gx, gy, 40);
+      }, 1800);
 
       var imageData, pixels;
 
@@ -610,7 +584,7 @@
 
         // Wave propagation — 2D wave equation on the grid
         // new[i] = (sum of 4 neighbours / 2) - old[i], then dampen
-        var damping = 0.985; // was 0.985 — waves die out much sooner
+        var damping = 0.992;
         for (var y = 1; y < rows - 1; y++) {
           for (var x = 1; x < cols - 1; x++) {
             var i = y * cols + x;
@@ -622,6 +596,16 @@
             ) / 2 - previous[i];
             previous[i] = val * damping;
           }
+        }
+
+        // Zero out boundary cells to prevent edge flicker artifacts
+        for (var x = 0; x < cols; x++) {
+          previous[x] = 0;                        // top row
+          previous[(rows - 1) * cols + x] = 0;    // bottom row
+        }
+        for (var y = 0; y < rows; y++) {
+          previous[y * cols] = 0;                  // left column
+          previous[y * cols + (cols - 1)] = 0;     // right column
         }
 
         // Swap buffers
@@ -636,10 +620,7 @@
         for (var gy2 = 0; gy2 < rows; gy2++) {
           for (var gx2 = 0; gx2 < cols; gx2++) {
             var h = current[gy2 * cols + gx2];
-            // Normalise height to 0–1 range
             var t = Math.max(0, Math.min(1, (h + 100) / 200));
-
-            // Blend between deep teal and light teal based on height
             var r, g, b;
             if (t < 0.5) {
               var f = t * 2;
@@ -652,8 +633,6 @@
               g = COLOR_MID[1] + (COLOR_LIGHT[1] - COLOR_MID[1]) * f2;
               b = COLOR_MID[2] + (COLOR_LIGHT[2] - COLOR_MID[2]) * f2;
             }
-
-            // Paint each grid cell as SCALE×SCALE block of pixels
             for (var py = 0; py < SCALE; py++) {
               for (var px = 0; px < SCALE; px++) {
                 var pixelX = gx2 * SCALE + px;
@@ -671,6 +650,33 @@
         }
 
         ctx.putImageData(imageData, 0, 0);
+
+        // Draw logo in horizontal strips, each displaced by local wave height.
+        // This creates a refraction/ripple effect without needing getImageData.
+        if (logoImg && logoImg.complete && logoImg.naturalWidth > 0) {
+          var lW = 340;
+          var lH = Math.round(lW * logoImg.naturalHeight / logoImg.naturalWidth);
+          var lX = (canvas.width  - lW) / 2;
+          var lY = (canvas.height - lH) / 2;
+          var STRIPS = 30;
+          var dstSH = lH / STRIPS;
+          var srcSH = logoImg.naturalHeight / STRIPS;
+          ctx.save();
+          ctx.globalAlpha = 0.80;
+          for (var si = 0; si < STRIPS; si++) {
+            var dstY = lY + si * dstSH;
+            var gy3 = Math.max(0, Math.min(rows - 1, Math.floor(dstY / SCALE)));
+            var gx3 = Math.max(0, Math.min(cols - 1, Math.floor((lX + lW * 0.5) / SCALE)));
+            var sdx = current[gy3 * cols + gx3] * 0.3;
+            ctx.save();
+            ctx.beginPath();
+            ctx.rect(0, dstY, canvas.width, dstSH + 1);
+            ctx.clip();
+            ctx.drawImage(logoImg, 0, si * srcSH, logoImg.naturalWidth, srcSH, lX + sdx, dstY, lW, dstSH + 1);
+            ctx.restore();
+          }
+          ctx.restore();
+        }
         requestAnimationFrame(step);
       }
 

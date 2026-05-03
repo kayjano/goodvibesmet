@@ -70,12 +70,6 @@ body {
   color: var(--color-text);
   background-color: var(--color-bg);
   overflow-x: hidden;
-  cursor: none;
-}
-
-@media (hover: none) {
-  body { cursor: auto; }
-  .cursor, .cursor-ring { display: none; }
 }
 
 ul { list-style: none; }
@@ -100,35 +94,7 @@ p:last-child {
 
 
 /* ================================================================
-   3. CUSTOM CURSOR
-   ================================================================ */
-
-.cursor {
-  position: fixed;
-  width: 8px;
-  height: 8px;
-  background: var(--color-teal);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 36px;
-  height: 36px;
-  border: 1px solid var(--color-teal);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  opacity: 0.45;
-}
-
-
-/* ================================================================
-   4. NAVIGATION
+   3. NAVIGATION
    ================================================================ */
 
 nav {
@@ -150,8 +116,8 @@ nav.scrolled {
 
 .nav-logo {
   font-family: var(--font-heading);
-  font-size: 1.1rem;
-  font-weight: 400;
+  font-size: 1.25rem;
+  font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--color-text);
 }
@@ -202,6 +168,19 @@ nav.scrolled {
   background: #8cb8b6; /* light teal fallback */
 }
 
+/* Logo: hidden on desktop (JS draws it on canvas with refraction); shown on mobile as static fallback */
+#logoUnderwater {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 340px;
+  opacity: 0.82;
+  pointer-events: none;
+  z-index: 1;
+  display: none;
+}
+
 /* The canvas fills the entire hero image side */
 #rippleCanvas {
   position: absolute;
@@ -209,6 +188,19 @@ nav.scrolled {
   width: 100%;
   height: 100%;
   display: block;
+  z-index: 2;
+}
+
+@media (max-width: 768px) {
+  #rippleCanvas {
+    display: none;
+  }
+  #logoUnderwater {
+    display: block;
+  }
+  .hero-image-side {
+    background: rgb(140, 190, 187);
+  }
 }
 
 /* Keep placeholder styles in case they're needed as fallback */
@@ -306,6 +298,7 @@ nav.scrolled {
   padding-bottom: var(--space-xs);
   border-bottom: 1px solid var(--color-teal);
 }
+
 
 .service-grid {
   display: grid;
@@ -471,11 +464,11 @@ nav.scrolled {
 .hero-phone {
   margin-top: 0.75rem;
   font-family: var(--font-heading);
-  font-size: 1.05rem;
-  font-weight: 400;
+  font-size: 1.2rem;
+  font-weight: 500;
   font-style: italic;
   letter-spacing: 0.04em;
-  color: var(--color-text-light);
+  color: var(--color-text);
 }
 
 /* The frame is position:relative so the stat strip can anchor to its corner */
@@ -768,6 +761,16 @@ nav.scrolled {
   padding: var(--space-md);
 }
 
+.faq-panel-img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 3px;
+  margin-top: var(--space-md);
+}
+
 .faq-panel .section-label {
   color: var(--color-teal);
 }
@@ -1010,6 +1013,7 @@ footer {
 
 .btn-ghost {
   display: inline-block;
+  align-self: flex-start;
   padding: 0.7rem 1.5rem;
   border: 1px solid var(--color-teal);
   color: var(--color-teal);
