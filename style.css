@@ -318,6 +318,17 @@ nav.scrolled {
   transition: background 0.35s ease, box-shadow 0.35s ease;
 }
 
+.service-card-icon {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  opacity: 0.8;
+  pointer-events: none;
+}
+
 .service-card::after {
   content: '';
   position: absolute;
