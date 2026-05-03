@@ -35,8 +35,8 @@
   --color-border:    #ddd8d0;
   --color-white:     #ffffff;
 
-  --font-heading: 'Cormorant Garamond', Georgia, serif;
-  --font-body:    'Jost', 'Helvetica Neue', sans-serif;
+  --font-heading: 'Raleway', 'Helvetica Neue', sans-serif;
+  --font-body:    'DM Sans', 'Helvetica Neue', sans-serif;
 
   --space-xs:  0.5rem;
   --space-sm:  1rem;
@@ -129,10 +129,10 @@ nav.scrolled {
 
 .nav-links a {
   font-size: 0.78rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--color-stone);
+  color: var(--color-text-light);
   position: relative;
   transition: color 0.2s;
 }
@@ -168,39 +168,30 @@ nav.scrolled {
   background: #8cb8b6; /* light teal fallback */
 }
 
-/* Logo: hidden on desktop (JS draws it on canvas with refraction); shown on mobile as static fallback */
-#logoUnderwater {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 340px;
-  opacity: 0.82;
-  pointer-events: none;
-  z-index: 1;
-  display: none;
-}
-
-/* The canvas fills the entire hero image side */
 #rippleCanvas {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   display: block;
+  z-index: 1;
+}
+
+#heroLogo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 72%;
+  max-width: 380px;
+  border-radius: 50%;
+  pointer-events: none;
   z-index: 2;
 }
 
 @media (max-width: 768px) {
-  #rippleCanvas {
-    display: none;
-  }
-  #logoUnderwater {
-    display: block;
-  }
-  .hero-image-side {
-    background: rgb(140, 190, 187);
-  }
+  #rippleCanvas { display: none; }
+  .hero-image-side { background: rgb(140, 190, 187); }
 }
 
 /* Keep placeholder styles in case they're needed as fallback */
@@ -224,7 +215,7 @@ nav.scrolled {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 9rem 5rem 5rem 5.5rem;
+  padding: 6.5rem 5rem 3.5rem 5.5rem;
   background: var(--color-bg);
   position: relative;
 }
@@ -244,7 +235,7 @@ nav.scrolled {
 
 .hero-eyebrow {
   font-size: 0.72rem;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--color-teal);
@@ -260,11 +251,19 @@ nav.scrolled {
   margin-bottom: 1.5rem;
 }
 
+.hero-title em {
+  font-size: 0.5em;
+  font-weight: 300;
+  font-style: italic;
+  display: block;
+  margin-top: 0.2em;
+  letter-spacing: 0.03em;
+}
+
 .hero-tagline {
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   font-weight: 400;
-  font-style: italic;
   color: var(--color-text-light);
   margin-bottom: 2.5rem;
 }
@@ -464,9 +463,8 @@ nav.scrolled {
 .hero-phone {
   margin-top: 0.75rem;
   font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-size: 1.35rem;
   font-weight: 500;
-  font-style: italic;
   letter-spacing: 0.04em;
   color: var(--color-text);
 }
@@ -764,7 +762,7 @@ nav.scrolled {
 .faq-panel-img {
   display: block;
   width: 100%;
-  height: 220px;
+  height: 320px;
   object-fit: cover;
   object-position: center;
   border-radius: 3px;
@@ -883,10 +881,25 @@ nav.scrolled {
 
 .contact-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 1.25rem;
   padding: var(--space-md) 0;
   border-bottom: 1px solid var(--color-border);
+}
+
+.contact-icon {
+  width: 22px;
+  height: 22px;
+  flex-shrink: 0;
+  color: var(--color-teal);
+  margin-bottom: 3px;
+}
+
+.contact-row-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .contact-row:first-child {
@@ -903,7 +916,7 @@ nav.scrolled {
 
 .contact-val {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
   color: var(--color-text);
 }
@@ -928,22 +941,34 @@ footer {
 }
 
 .footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
   font-family: var(--font-heading);
-  font-size: 0.9rem;
+  font-size: 1rem;
   letter-spacing: 0.05em;
   color: rgba(245, 242, 238, 0.5);
 }
 
+.footer-logo-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  opacity: 0.7;
+}
+
 .footer-copy {
-  font-size: 0.75rem;
-  letter-spacing: 0.06em;
-  color: rgba(245, 242, 238, 0.3);
+  font-size: 0.88rem;
+  letter-spacing: 0.04em;
+  color: rgba(245, 242, 238, 0.4);
 }
 
 .footer-disclaimer {
   width: 100%;
-  font-size: 0.68rem;
-  letter-spacing: 0.03em;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
   color: rgba(245, 242, 238, 0.22);
   line-height: 1.6;
   padding-top: 0.75rem;

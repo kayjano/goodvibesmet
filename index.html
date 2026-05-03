@@ -6,8 +6,10 @@
   <title>Good Vibrations Massage & Energy Therapies | Willards, MD</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="favicon_512.png">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 
 <body>
@@ -35,17 +37,13 @@
   <section id="hero">
 
     <div class="hero-image-side">
-      <img id="logoUnderwater" src="Good_Vibes_MET_logo_transparent.png" alt="Good Vibrations logo" />
-      <!-- RIPPLE CANVAS
-           This draws an interactive water ripple effect.
-           Move your cursor over this area to create ripples.
-           The canvas is sized and animated by JavaScript below. -->
       <canvas id="rippleCanvas"></canvas>
+      <img id="heroLogo" src="Good_Vibes_MET_logo.png" alt="Good Vibrations logo" />
     </div>
 
     <div class="hero-content-side">
       <p class="hero-eyebrow">Willards, Maryland</p>
-      <h1 class="hero-title">Good Vibrations<br /><em>Massage &amp; Energy Therapies</em></h1>
+      <h1 class="hero-title">Good Vibrations<em>Massage &amp; Energy Therapies</em></h1>
       <p class="hero-tagline">Over 20 years of healing touch — body, energy, and spirit.</p>
       <a href="tel:4435692029" class="btn-primary">Call to Schedule</a>
       <p class="hero-phone">443-569-2029</p>
@@ -127,7 +125,7 @@
         </div>
         <div class="addon-item fade-up delay-1">
           <span class="addon-name">Foot Reflexology</span>
-          <span class="addon-detail">Extra focused foot work &nbsp;·&nbsp; +$30 &nbsp;·&nbsp; 15 min</span>
+          <span class="addon-detail">Extra focused foot work<br />+$30 &nbsp;·&nbsp; 15 min</span>
         </div>
       </div>
 
@@ -344,7 +342,7 @@
 
           <div class="faq-list">
 
-            <div class="faq-item open">
+            <div class="faq-item">
               <button class="faq-q">Is this practice only for women?<span class="faq-chevron"></span></button>
               <div class="faq-body"><div class="faq-body-inner">
                 <p class="faq-a">Christine has a deep specialty in women's health and healing — but her practice is open to anyone. If you're wondering whether it's a good fit, just call.</p>
@@ -390,16 +388,25 @@
 
         <div class="contact-details fade-up delay-2">
           <div class="contact-row">
-            <span class="contact-label">Phone</span>
-            <a href="tel:4435692029" class="contact-val">443 · 569 · 2029</a>
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.78a16 16 0 0 0 6.29 6.29l1.64-1.64a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <div class="contact-row-text">
+              <span class="contact-label">Phone</span>
+              <a href="tel:4435692029" class="contact-val">443 · 569 · 2029</a>
+            </div>
           </div>
           <div class="contact-row">
-            <span class="contact-label">Email</span>
-            <a href="mailto:mcwebb40@yahoo.com" class="contact-val">mcwebb40@yahoo.com</a>
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <div class="contact-row-text">
+              <span class="contact-label">Email</span>
+              <a href="mailto:mcwebb40@yahoo.com" class="contact-val">mcwebb40@yahoo.com</a>
+            </div>
           </div>
           <div class="contact-row">
-            <span class="contact-label">Location</span>
-            <span class="contact-val">Willards, Maryland</span>
+            <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+            <div class="contact-row-text">
+              <span class="contact-label">Location</span>
+              <span class="contact-val">Willards, Maryland</span>
+            </div>
           </div>
         </div>
 
@@ -412,7 +419,10 @@
        FOOTER
        ============================================================ -->
   <footer>
-    <span class="footer-logo">Good Vibrations Massage &amp; Energy Therapies</span>
+    <span class="footer-logo">
+      <img src="Good_Vibes_MET_logo.png" alt="" class="footer-logo-img" />
+      Good Vibrations Massage &amp; Energy Therapies
+    </span>
     <span class="footer-copy">&copy; 2025 &nbsp;·&nbsp; Willards, Maryland</span>
     <span class="footer-disclaimer">The services offered at Good Vibrations are complementary in nature and are not a substitute for medical or mental health treatment.</span>
   </footer>
@@ -496,36 +506,15 @@
       }
     })();
 
-    // ============================================================
-    // 5. WATER RIPPLE EFFECT
-    //
-    // How it works:
-    // - A <canvas> fills the hero image side
-    // - We maintain two grids of numbers (current, previous) that
-    //   simulate water wave physics — each cell is a "height"
-    // - Moving the mouse drops a "stone" that disturbs the grid
-    // - Each animation frame: new height = average of neighbours
-    //   minus the old height, then dampened slightly
-    //   This is a classic 2D wave equation on a grid.
-    // - Heights are mapped to colors in the teal palette
-    // ============================================================
     (function() {
       var canvas = document.getElementById('rippleCanvas');
       if (!canvas) return;
       var ctx = canvas.getContext('2d');
-
-      // Resolution of the simulation grid — lower = faster, higher = sharper
-      // We run the sim at a reduced size and scale up for performance
       var SCALE = 6;
-      var cols, rows;
-      var current, previous; // the two wave grids
-      var logoImg = document.getElementById('logoUnderwater');
-
-      // Palette: teal/sage gradient colors to map wave heights to
-      // These are RGB triplets blended based on wave height
-      var COLOR_DEEP  = [100, 155, 152];  // soft teal (troughs) — light base
-      var COLOR_MID   = [140, 190, 187];  // pale teal (neutral)
-      var COLOR_LIGHT = [220, 240, 238];  // near-white (crests) — the sparkle
+      var cols, rows, current, previous;
+      var COLOR_DEEP  = [100, 155, 152];
+      var COLOR_MID   = [140, 190, 187];
+      var COLOR_LIGHT = [220, 240, 238];
 
       function init() {
         canvas.width  = canvas.offsetWidth;
@@ -536,87 +525,49 @@
         previous = new Float32Array(cols * rows);
       }
 
-      // Drop a ripple at grid position (gx, gy) with given strength
       function disturb(gx, gy, strength) {
-        var radius = 2; // smaller splash radius
+        var radius = 2;
         for (var dy = -radius; dy <= radius; dy++) {
           for (var dx = -radius; dx <= radius; dx++) {
             if (dx*dx + dy*dy <= radius*radius) {
-              var nx = gx + dx;
-              var ny = gy + dy;
-              if (nx >= 0 && nx < cols && ny >= 0 && ny < rows) {
+              var nx = gx + dx, ny = gy + dy;
+              if (nx >= 0 && nx < cols && ny >= 0 && ny < rows)
                 current[ny * cols + nx] += strength;
-              }
             }
           }
         }
       }
 
-      // Mouse tracking — only disturb when cursor moves a meaningful distance
-      var heroSide = canvas.parentElement;
       var lastGx = -99, lastGy = -99;
-      heroSide.addEventListener('mousemove', function(e) {
+      canvas.parentElement.addEventListener('mousemove', function(e) {
         var rect = canvas.getBoundingClientRect();
-        var gx = Math.floor((e.clientX - rect.left)  / SCALE);
-        var gy = Math.floor((e.clientY - rect.top)   / SCALE);
-        // Only drop a ripple if cursor moved at least 10 grid cells
+        var gx = Math.floor((e.clientX - rect.left) / SCALE);
+        var gy = Math.floor((e.clientY - rect.top)  / SCALE);
         if (Math.abs(gx - lastGx) > 8 || Math.abs(gy - lastGy) > 8) {
           disturb(gx, gy, 60);
-          lastGx = gx;
-          lastGy = gy;
+          lastGx = gx; lastGy = gy;
         }
       });
 
-      // Occasional gentle drip so canvas is never fully still
       setInterval(function() {
-        var gx = Math.floor(Math.random() * cols);
-        var gy = Math.floor(Math.random() * rows);
-        disturb(gx, gy, 40);
+        disturb(Math.floor(Math.random() * cols), Math.floor(Math.random() * rows), 40);
       }, 1800);
 
-      var imageData, pixels;
-
       function step() {
-        // Resize if the element changed size (e.g. window resize)
-        if (canvas.offsetWidth !== canvas.width || canvas.offsetHeight !== canvas.height) {
-          init();
-        }
-
-        // Wave propagation — 2D wave equation on the grid
-        // new[i] = (sum of 4 neighbours / 2) - old[i], then dampen
+        if (canvas.offsetWidth !== canvas.width || canvas.offsetHeight !== canvas.height) init();
         var damping = 0.992;
         for (var y = 1; y < rows - 1; y++) {
           for (var x = 1; x < cols - 1; x++) {
             var i = y * cols + x;
-            var val = (
-              current[i - 1] +
-              current[i + 1] +
-              current[i - cols] +
-              current[i + cols]
-            ) / 2 - previous[i];
-            previous[i] = val * damping;
+            previous[i] = ((current[i-1] + current[i+1] + current[i-cols] + current[i+cols]) / 2 - previous[i]) * damping;
           }
         }
+        for (var x = 0; x < cols; x++) { previous[x] = 0; previous[(rows-1)*cols+x] = 0; }
+        for (var y = 0; y < rows; y++) { previous[y*cols] = 0; previous[y*cols+cols-1] = 0; }
+        var tmp = previous; previous = current; current = tmp;
 
-        // Zero out boundary cells to prevent edge flicker artifacts
-        for (var x = 0; x < cols; x++) {
-          previous[x] = 0;                        // top row
-          previous[(rows - 1) * cols + x] = 0;    // bottom row
-        }
-        for (var y = 0; y < rows; y++) {
-          previous[y * cols] = 0;                  // left column
-          previous[y * cols + (cols - 1)] = 0;     // right column
-        }
-
-        // Swap buffers
-        var tmp = previous;
-        previous = current;
-        current = tmp;
-
-        // Draw: map each grid cell to a pixel color
-        imageData = ctx.createImageData(canvas.width, canvas.height);
-        pixels = imageData.data;
-
+        var imageData = ctx.createImageData(canvas.width, canvas.height);
+        var pixels = imageData.data;
         for (var gy2 = 0; gy2 < rows; gy2++) {
           for (var gx2 = 0; gx2 < cols; gx2++) {
             var h = current[gy2 * cols + gx2];
@@ -635,54 +586,21 @@
             }
             for (var py = 0; py < SCALE; py++) {
               for (var px = 0; px < SCALE; px++) {
-                var pixelX = gx2 * SCALE + px;
-                var pixelY = gy2 * SCALE + py;
+                var pixelX = gx2 * SCALE + px, pixelY = gy2 * SCALE + py;
                 if (pixelX < canvas.width && pixelY < canvas.height) {
                   var idx = (pixelY * canvas.width + pixelX) * 4;
-                  pixels[idx]     = r;
-                  pixels[idx + 1] = g;
-                  pixels[idx + 2] = b;
-                  pixels[idx + 3] = 255;
+                  pixels[idx] = r; pixels[idx+1] = g; pixels[idx+2] = b; pixels[idx+3] = 255;
                 }
               }
             }
           }
         }
-
         ctx.putImageData(imageData, 0, 0);
-
-        // Draw logo in horizontal strips, each displaced by local wave height.
-        // This creates a refraction/ripple effect without needing getImageData.
-        if (logoImg && logoImg.complete && logoImg.naturalWidth > 0) {
-          var lW = 340;
-          var lH = Math.round(lW * logoImg.naturalHeight / logoImg.naturalWidth);
-          var lX = (canvas.width  - lW) / 2;
-          var lY = (canvas.height - lH) / 2;
-          var STRIPS = 30;
-          var dstSH = lH / STRIPS;
-          var srcSH = logoImg.naturalHeight / STRIPS;
-          ctx.save();
-          ctx.globalAlpha = 0.80;
-          for (var si = 0; si < STRIPS; si++) {
-            var dstY = lY + si * dstSH;
-            var gy3 = Math.max(0, Math.min(rows - 1, Math.floor(dstY / SCALE)));
-            var gx3 = Math.max(0, Math.min(cols - 1, Math.floor((lX + lW * 0.5) / SCALE)));
-            var sdx = current[gy3 * cols + gx3] * 0.3;
-            ctx.save();
-            ctx.beginPath();
-            ctx.rect(0, dstY, canvas.width, dstSH + 1);
-            ctx.clip();
-            ctx.drawImage(logoImg, 0, si * srcSH, logoImg.naturalWidth, srcSH, lX + sdx, dstY, lW, dstSH + 1);
-            ctx.restore();
-          }
-          ctx.restore();
-        }
         requestAnimationFrame(step);
       }
 
       init();
       step();
-
     })();
 
   </script>
