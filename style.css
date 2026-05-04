@@ -201,6 +201,7 @@ nav.scrolled {
   z-index: 2;
 }
 
+
 @media (max-width: 768px) {
   #rippleCanvas { display: none; }
   .hero-image-side { background: rgb(140, 190, 187); }
@@ -382,6 +383,16 @@ nav.scrolled {
   top: 5rem;
 }
 
+.shamanic-img-mobile {
+  display: none;
+}
+
+.shamanic-img-mobile img {
+  width: 100%;
+  display: block;
+  border-radius: 3px;
+}
+
 .energy-image img {
   width: 100%;
   display: block;
@@ -483,13 +494,21 @@ nav.scrolled {
   align-self: start;
 }
 
+.hero-cta {
+  align-self: flex-start;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .hero-phone {
   margin-top: 0.75rem;
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.2rem;
   font-weight: 500;
   letter-spacing: 0.04em;
   color: var(--color-text);
+  text-align: center;
 }
 
 /* The frame is position:relative so the stat strip can anchor to its corner */
@@ -1113,11 +1132,27 @@ footer {
   }
 
   .hero-content-side {
-    padding: 6rem 2rem 3rem;
+    padding: 5.5rem 2rem 3rem;
+    background: rgb(140, 190, 187);
+    align-items: center;
+    text-align: center;
   }
 
-  .hero-content-side::before {
-    display: none;
+  .hero-cta {
+    align-self: center;
+    align-items: center;
+  }
+
+  .hero-content-side::before { display: none; }
+
+  .hero-eyebrow { color: rgba(255, 255, 255, 0.85); }
+  .hero-title   { color: #ffffff; }
+  .hero-tagline { color: rgba(255, 255, 255, 0.9); }
+  .hero-phone   { color: rgba(255, 255, 255, 0.85); }
+
+  .hero-content-side .btn-primary {
+    background: #ffffff;
+    color: var(--color-teal);
   }
 
   .about-grid,
@@ -1128,8 +1163,17 @@ footer {
     gap: var(--space-lg);
   }
 
-  .energy-image {
+  .about-image-col {
     position: static;
+  }
+
+  .energy-image {
+    display: none;
+  }
+
+  .shamanic-img-mobile {
+    display: block;
+    margin: var(--space-md) 0;
   }
 
   .about-frame-outline {
@@ -1180,7 +1224,7 @@ footer {
   .nav-hamburger { display: flex; }
 
   .nav-logo {
-    color: var(--color-teal);
+    color: var(--color-text);
   }
 
   .nav-logo-img {
@@ -1209,10 +1253,6 @@ footer {
     letter-spacing: 0.08em;
   }
 
-  #heroLogo {
-    width: 52%;
-    max-width: 200px;
-  }
 }
 
 @media (max-width: 540px) {
