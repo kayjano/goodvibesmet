@@ -1202,8 +1202,11 @@ footer {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
+  padding: 10px;
+  position: relative;
   z-index: 101;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-hamburger span {
