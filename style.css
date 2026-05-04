@@ -115,11 +115,23 @@ nav.scrolled {
 }
 
 .nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
   font-family: var(--font-heading);
   font-size: 1.25rem;
   font-weight: 500;
   letter-spacing: 0.05em;
   color: var(--color-text);
+}
+
+.nav-logo-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  display: none;
 }
 
 .nav-links {
@@ -1092,11 +1104,16 @@ footer {
 @media (max-width: 900px) {
   #hero {
     grid-template-columns: 1fr;
-    grid-template-rows: 50vh auto;
+    grid-template-rows: auto;
+    min-height: auto;
+  }
+
+  .hero-image-side {
+    display: none;
   }
 
   .hero-content-side {
-    padding: 4rem 2rem 5rem;
+    padding: 6rem 2rem 3rem;
   }
 
   .hero-content-side::before {
@@ -1132,8 +1149,73 @@ footer {
   }
 }
 
+/* Hamburger button — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 101;
+}
+
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--color-text);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Animate hamburger → X when menu is open */
+#nav.menu-open .nav-hamburger span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+#nav.menu-open .nav-hamburger span:nth-child(2) { opacity: 0; }
+#nav.menu-open .nav-hamburger span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 768px) {
+  .nav-hamburger { display: flex; }
+
+  .nav-logo {
+    color: var(--color-teal);
+  }
+
+  .nav-logo-img {
+    display: block;
+    width: 48px;
+    height: 48px;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0; right: 0;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.5rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 8px 24px rgba(44, 40, 37, 0.08);
+  }
+
+  .nav-links.open { display: flex; }
+
+  .nav-links a {
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+  }
+
+  #heroLogo {
+    width: 52%;
+    max-width: 200px;
+  }
+}
+
 @media (max-width: 540px) {
-  .nav-links { display: none; }
   .service-card-img { width: 100%; }
   .service-grid { grid-template-columns: 1fr; }
   .hero-title { font-size: 2rem; }
